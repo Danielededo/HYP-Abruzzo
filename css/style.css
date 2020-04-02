@@ -1,0 +1,15 @@
+body{
+	padding-top: 60px;
+}
+
+.navbar-brand,
+.navbar-nav > li >a{
+	height: 60px;
+	line-height: 50px;
+}
+
+.carousel-inner, .carousel-item{
+	min-height: 700px;
+	background-size: cover;
+	background-position: center center
+}

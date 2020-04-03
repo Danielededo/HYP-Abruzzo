@@ -1,0 +1,5 @@
+.carousel-inner, .carousel-item{
+	min-height: 700px;
+	background-size: cover;
+	background-position: center center
+}

@@ -8,12 +8,6 @@ body{
 	line-height: 50px;
 }
 
-.carousel-inner, .carousel-item{
-	min-height: 700px;
-	background-size: cover;
-	background-position: center center
-}
-
 .navbar-left >img{
 	width: 60px;
     height: 60px;

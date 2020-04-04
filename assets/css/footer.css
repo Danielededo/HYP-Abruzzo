@@ -1,0 +1,149 @@
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .myFooter {
+        height: 100%;
+    }
+
+    main {
+        min-height: 200px
+    }
+}
+
+.myFooter {
+    margin-top: 50px;
+    min-height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
+
+.myFooter li {
+    color: white;
+    padding-bottom: 2%;
+    font-size: medium;
+}
+
+.myFooter a {
+    color: white;
+    padding-bottom: 2%;
+    font-size: medium;
+}
+
+
+.myFooter h1 {
+    padding: 10px;
+    font-size: 2.7em;
+    color: rgb(245, 235, 245);
+    text-align: center;
+}
+
+
+.myFooter h3 {
+    color: #ff8e15;
+    padding-bottom: 5%;
+    font-size: x-large;
+}
+
+
+.myFooter main {
+    background-color: #22313f;
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 3%;
+    padding-bottom: 2%;
+    flex: 1 1 auto;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.myFooter main > section {
+    flex: 1 1 auto;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.myFooter main > section > p {
+    padding-bottom: 20px
+}
+
+.myFooter footer {
+    margin-top: 0.1%;
+    color: #ff8224;
+    font-family: "Rockwell", Arial, sans-serif;
+    background-color: #22313f;
+    text-align: center;
+    padding: 10px;
+}
+
+.myFooter section {
+    display: table-cell;
+}
+
+
+@media only screen and (max-width: 420px) {
+
+    h1 {
+        width: 100%;
+        font-size: 2.0em
+    }
+
+    .nav {
+        min-width: 100%;
+        margin: auto;
+        padding: 0;
+    }
+
+    .nav > li {
+        flex: 1
+    }
+
+    .nav > li > a {
+        font-size: 1.0em
+    }
+
+    h2 {
+        font-size: 1.2em
+    }
+
+    main {
+        flex-flow: column nowrap;
+    }
+
+    main > section {
+        width: 100%;
+        border-bottom: 1px solid #ccc;
+    }
+
+    main > section > p {
+        width: 100%
+    }
+
+    .myFooter main {
+        margin-top: 0;
+        padding-bottom: 0;
+    }
+
+    .myFooter footer {
+        margin-top: 0;
+        font-size: 10px;
+        padding: 5px;
+    }
+
+    .myFooter li {
+        padding-bottom: 0.5%;
+        font-size: medium;
+    }
+
+    .myFooter h3 {
+        padding-bottom: 0.5%;
+    }
+
+    .myFooter main > section {
+        padding-bottom: 1%;
+        padding-top: 3%;
+
+    }
+
+}

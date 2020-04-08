@@ -112,6 +112,10 @@ body{
 	margin-top: -6px;
 }
 
+.col-md-3 > a{
+	color: #000000;
+}
+
 .col-md-3 > a > img {
 	width: 150px;
 	height: 200px;

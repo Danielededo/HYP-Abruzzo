@@ -111,3 +111,8 @@ body{
 .breadcrumb{
 	margin-top: -6px;
 }
+
+.col-md-3 > a > img {
+	width: 150px;
+	height: 200px;
+}

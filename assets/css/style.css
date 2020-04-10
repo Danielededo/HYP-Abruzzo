@@ -28,12 +28,12 @@ body{
     }
 
     main {
-        min-height: 200px
+        min-height: 150px
     }
 }
 
 .myFooter {
-    margin-top: 50px;
+    margin-top: 53px;
     min-height: 100%;
     display: flex;
     flex-flow: column nowrap;
@@ -64,7 +64,7 @@ body{
 
 .myFooter h3 {
     color: #ff8e15;
-    padding-bottom: 5%;
+    padding-bottom: 2%;
     font-size: x-large;
 		margin-left: +35px;
 }
@@ -83,8 +83,6 @@ body{
 .myFooter main > section {
     flex: 1 1 auto;
     height: 100%;
-    align-items: center;
-    justify-content: center;
     padding-top: 20px;
 }
 
@@ -119,4 +117,10 @@ body{
 .col-md-3 > a > img {
 	width: 150px;
 	height: 200px;
+}
+
+.vertical{
+	border-color: inherit;
+	border-left: 0.5px solid;
+  height: 760px;
 }

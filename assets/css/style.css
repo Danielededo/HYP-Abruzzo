@@ -22,16 +22,6 @@ body{
 	background-position: center center
 }
 
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    .myFooter {
-        height: 100%;
-    }
-
-    main {
-        min-height: 150px
-    }
-}
-
 .myFooter {
     margin-top: 53px;
     min-height: 100%;
@@ -124,4 +114,8 @@ body{
 	border-color: inherit;
 	border-left: 0.5px solid;
   height: 760px;
+}
+
+#Jan,#Feb{
+	display:none;
 }

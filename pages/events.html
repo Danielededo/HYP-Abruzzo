@@ -46,9 +46,9 @@
 	<br>
 	<nav aria-label="breadcrumb">
 	  <ol class="breadcrumb">
-	    <!--<li class="breadcrumb-item"><a href="#">Home</a></li>
-	    <li class="breadcrumb-item"><a href="#">Library</a></li>-->
-	    <li class="breadcrumb-item active" aria-current="page">Events</li>
+			<li class="breadcrumb-item"><a id="bread" href="../pages/events.html">Events</a></li>
+			<li id="crumb" class="breadcrumb-item active" aria-current="page">Events</li>
+			<li id="monthClick" class="breadcrumb-item"></li>	
 	  </ol>
 	</nav>
 
@@ -61,8 +61,8 @@
 		<br>
 		<div class="row">
 			<div class="col-md-2">
-					<a class="month" href="#" onclick="myFunctionJan(this)"><h4>January</h4></a><br>
-					<a class="month" href="#" onclick="myFunctionFeb(this)"><h4>February</h4></a><br>
+					<a class="month" href="#" onclick="myFunction(this,'Jan')"><h4>January</h4></a><br>
+					<a class="month" href="#" onclick="myFunction(this,'Feb')"><h4>February</h4></a><br>
 					<a href="#"><h4>March</h4></a><br>
 					<a href="#"><h4>April</h4></a><br>
 					<a href="#"><h4>May</h4></a><br>

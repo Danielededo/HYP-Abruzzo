@@ -133,3 +133,11 @@ body{
 #Jan,#Feb{
 	display:none;
 }
+
+#monthClick,#bread{
+	display:none;
+}
+
+#crumb.breadcrumb-item::before{
+	content: none;
+}

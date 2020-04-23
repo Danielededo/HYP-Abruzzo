@@ -1,4 +1,4 @@
-var months=["Jan","Feb"];
+var months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
 function myFunction(el,str) {
   var x = document.getElementById(str);
@@ -16,4 +16,49 @@ function myFunction(el,str) {
   document.getElementById("bread").style.display='block';
   document.getElementById("crumb").style.display='none';
   console.log(el.textContent);
+}
+
+function swapAssociation(el){
+  var y = document.getElementsByClassName("association");
+  if(el.textContent==="About us"){
+    var x = document.getElementById("About");
+    document.getElementById("Contacts").style.display="none";
+    y[1].style.textDecoration="none";
+  }else{
+    var x = document.getElementById("Contacts");
+  document.getElementById("About").style.display="none";
+    y[0].style.textDecoration="none";
+  }
+  x.style.display="block";
+  el.style.textDecoration = "underline";
+}
+
+function swapEvent(el){
+  var y = document.getElementsByClassName("event");
+  if(el.textContent==="Description"){
+    var x = document.getElementById("eventDescription");
+    document.getElementById("eventInfo").style.display="none";
+    y[1].style.textDecoration="none";
+  }else{
+    var x = document.getElementById("eventInfo");
+  document.getElementById("eventDescription").style.display="none";
+    y[0].style.textDecoration="none";
+  }
+  x.style.display="block";
+  el.style.textDecoration = "underline";
+}
+
+function initMap() {
+  var myLatLng = {lat: 42.27425, lng:  14.13557};
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 14,
+    center: myLatLng
+  });
+
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: 'Hello World!'
+  });
 }

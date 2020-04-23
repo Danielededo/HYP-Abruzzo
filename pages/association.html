@@ -11,6 +11,7 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="../assets/js/bootstrap.min.js"></script>
+	<script src="../assets/js/scripts.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -58,19 +59,19 @@
 				<h2><b>Association</b></h2>
 			</div>
 			<div class="col-md-7">
-				<img width="700" height="350" src="https://images.unsplash.com/photo-1468421870903-4df1664ac249?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80" alt="">
+				<img width="110%" height="350" src="https://images.unsplash.com/photo-1468421870903-4df1664ac249?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80" alt="">
 			</div>
 		</div>
 		<br>
 		<div class="row">
 			<div class="col-md-2">
-				<a href="#"><h4><u>About us</u></h4></a><br>
-				<a href="../pages/contacts.html"><h4>Contacts</h4></a><br>
+				<a id="about-us" class="association" href="#" onclick="swapAssociation(this)"><h3>About us</h3></a><br>
+        <a class="association" href="#" onclick="swapAssociation(this)"><h3>Contacts</h3></a><br>
 			</div>
 			<div class="col-md-1">
 				<div class= "vertical"></div>
 			</div>
-			<div class="col-md-8">
+			<div id="About" class="col-md-8">
 				<h3><b>Who we are</b></h3><br>
 				<p>The Voluntary Abruzzo is a nonprofit association dedicated to promoting awareness and access to quality volunteer throughout the Abruzzo region.
 					What the association aims to do is organize events that can gather the largest number of willing people and able to contribute to the spread of this lifestyle, so helping others.<br>
@@ -86,6 +87,101 @@
 					So everyone's collaboration for a common purpose, to do good, to help other people and the environment around us in order to create a reality more welcoming to tourists from all over the world.<br>
 					When we started we were only a group of 5 people, to date we are 15 active members and more than 1000 volunteers.
 				</p>
+			</div>
+			<div id="Contacts" class="col-md-8">
+				<h3><b>Contacts</b></h3><br>
+				<section class="mb-4">
+
+    <!--Section description-->
+    <p class="w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly.</p>
+
+    <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-9 mb-md-0 mb-5">
+            <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="name" name="name" class="form-control">
+                            <label for="name" class="">Your name</label>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="email" name="email" class="form-control">
+                            <label for="email" class="">Your email</label>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                            <input type="text" id="subject" name="subject" class="form-control">
+                            <label for="subject" class="">Subject</label>
+                        </div>
+                    </div>
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-12">
+
+                        <div class="md-form">
+                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                            <label for="message">Your message</label>
+                        </div>
+
+                    </div>
+                </div>
+                <!--Grid row-->
+
+            </form>
+
+            <div class="text-center text-md-left">
+                <a class="btn btn-outline-primary" onclick="#">Send</a>
+            </div>
+            <div class="status"></div>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-3 text-center">
+            <ul class="list-unstyled mb-0">
+                <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                    <p>Piazza Leonardo Da Vinci, 32,
+20133 Milano, Italy</p>
+                </li>
+
+                <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                    <p>+02 000000</p>
+                </li>
+
+                <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                    <p>info@voluntaryabruzzo.com</p>
+                </li>
+            </ul>
+        </div>
+        <!--Grid column-->
+
+    </div>
+
+</section>
 			</div>
 		</div>
 	</div>

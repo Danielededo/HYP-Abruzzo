@@ -6,6 +6,11 @@ body{
 .navbar-nav > li >a{
 	height: 60px;
 	line-height: 50px;
+	font-size: 20px;
+}
+
+.navbar-brand{
+	font-size: 25px;
 }
 
 .navbar-left >img{
@@ -114,14 +119,25 @@ body{
 	margin-top: -6px;
 }
 
+.breadcrumb-item{
+	font-size: 18px;
+}
+
 /*link in black
 .col-md-3 > a{
 	color: #000000;
 }*/
 
+#who_we_are{
+	font-size: 20px;
+}
+
 .col-md-3 > a > img {
-	width: 150px;
-	height: 200px;
+	width: 180px;
+	height: 240px;
+}
+.col-md-3 > a{
+	font-size: 20px;
 }
 
 .vertical{
@@ -129,8 +145,15 @@ body{
 	border-left: 0.5px solid;
   height: 760px;
 }
+@media (max-width: 780px)
+{
+    .vertical
+    {
+        display: none;
+    }
+}
 
-#Jan,#Feb{
+#Jan,#Feb,#Mar,#Apr,#May,#Jun,#Jul,#Aug,#Sep,#Oct,#Nov,#Dec{
 	display:none;
 }
 
@@ -140,4 +163,50 @@ body{
 
 #crumb.breadcrumb-item::before{
 	content: none;
+}
+
+#About>p{
+	font-size: 18px;
+}
+
+#about-us{
+	text-decoration: underline;
+}
+
+#Contacts{
+       display: none;
+}
+
+#Contacts>section{
+	font-size: 18px;
+}
+
+.row>p{
+	font-size: 18px;
+}
+
+.col-md-8>p,{
+	font-size: 18px;
+}
+.col-md-6 >li>a{
+	font-size: 18px;
+}
+#eventDescription>p{
+	font-size: 18px;
+}
+
+#eventInfo> a,li{
+	font-size: 18px;
+}
+
+#about-event{
+	text-decoration: underline;
+}
+
+#eventInfo{
+       display: none;
+}
+#map {
+	height: 400px;
+  width: 90%; 
 }

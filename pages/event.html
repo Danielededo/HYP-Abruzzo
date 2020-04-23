@@ -11,6 +11,10 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="../assets/js/bootstrap.min.js"></script>
+	<script src="../assets/js/scripts.js"></script>
+	<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBk4AFpzj5bBUbPDG4mHTN1NKHazF-ZDLY&callback=initMap">
+	</script>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -66,18 +70,29 @@
 		<br>
 		<div class="row">
 			<div class="col-md-2">
-				<a href="#"><h4><u>Description</u></h4></a><br>
-				<a href="#"><h4>Pratical Info</h4></a><br>
+				<a id="about-event" class="event" href="#" onclick="swapEvent(this)"><h4>Description</h4></a><br>
+				<a class="event" href="#" onclick="swapEvent(this)"><h4>Pratical Info</h4></a><br>
 			</div>
 			<div class="col-md-1">
 				<div class= "vertical"></div>
 			</div>
-			<div class="col-md-8">
+			<div id="eventDescription" class="col-md-8">
 				<h3><b>Presentation</b></h3><br>
 				<p>Beach cleaning or clean-up is the process of removing solid litter, dense chemicals, and organic debris deposited on a beach or coastline by the tide, local visitors, or tourists. Humans pollute beaches with materials such as plastic bottles and bags, plastic straws, fishing gear, cigarette filters, and many other items that often lead to environmental degradation.<br>Every year hundreds of thousands of volunteers comb beaches and coastlines around the world to clean this debris. These materials are also called “marine debris” or "marine pollution" and their quantity has been increasing due to anthropocentric activities</p><br>
 
 				<h3><b>Contact</b></h3><br>
 				<p>The contact event organizer is <a href="../pages/person.html">Elena Russo</a></p>
+			</div>
+			<div id="eventInfo" class="col-md-8">
+				<h3><b>Services present in</b></h3>
+				<li><a href="#">ServiceA</a></li>
+        <li><a href="#">ServiceB</a></li>
+        <br>
+				<h3><b>Date</b></h3>
+				<p>25/01/2021</p>
+        <br>
+        <h3><b>Location</b></h3>
+        <div id="map"></div>
 			</div>
 		</div>
 	</div>

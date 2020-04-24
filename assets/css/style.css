@@ -21,6 +21,10 @@ body{
     margin-top: 2px;
 }
 
+.carousel{
+	padding-top: 15px;
+}
+
 .carousel-inner, .carousel-item{
 	min-height: 650px;
 	background-size: cover;
@@ -191,6 +195,11 @@ body{
 .col-md-6 >li>a{
 	font-size: 18px;
 }
+
+.col-md-2>p{
+	font-size: 18px;
+}
+
 #eventDescription>p{
 	font-size: 18px;
 }
@@ -206,7 +215,32 @@ body{
 #eventInfo{
        display: none;
 }
+
 #map {
 	height: 400px;
-  width: 90%; 
+  width: 100%;
+}
+
+#serviceInfo{
+	display: none;
+}
+
+#servicePhotos{
+	display: none;
+}
+
+#servicePhotos{
+	display: none;
+}
+
+#about-service{
+	text-decoration: underline;
+}
+
+#presentation>p{
+	font-size: 18px;
+}
+
+#serviceInfo>p{
+	font-size: 18px;
 }

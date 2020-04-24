@@ -48,17 +48,27 @@ function swapEvent(el){
   el.style.textDecoration = "underline";
 }
 
-function initMap() {
-  var myLatLng = {lat: 42.27425, lng:  14.13557};
-
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 14,
-    center: myLatLng
-  });
-
-  var marker = new google.maps.Marker({
-    position: myLatLng,
-    map: map,
-    title: 'Hello World!'
-  });
-}
+  function swapService(el) {
+    var y = document.getElementsByClassName("service");
+    if(el.textContent==="Description"){
+      var x = document.getElementById("presentation");
+      document.getElementById("serviceInfo").style.display="none";
+      y[1].style.textDecoration="none";
+      document.getElementById("servicePhotos").style.display="none";
+      y[2].style.textDecoration="none";
+    }else if(el.textContent==="Practical Info"){
+      var x = document.getElementById("serviceInfo");
+      document.getElementById("servicePhotos").style.display="none";
+      y[2].style.textDecoration="none";
+      document.getElementById("presentation").style.display="none";
+      y[0].style.textDecoration="none";
+    }else{
+      var x = document.getElementById("servicePhotos");
+      document.getElementById("presentation").style.display="none";
+      y[0].style.textDecoration="none";
+      document.getElementById("serviceInfo").style.display="none";
+      y[1].style.textDecoration="none";
+    }
+    x.style.display="block";
+    el.style.textDecoration = "underline";
+  }

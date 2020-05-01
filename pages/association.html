@@ -154,8 +154,17 @@
             </form>
 
             <div class="text-center text-md-left">
-                <a class="btn btn-outline-primary" onclick="#">Send</a>
+                <a class="button btn btn-outline-primary" onclick="wait2()" href="#popup1">Send</a>
             </div>
+						<div id="popup1" class="overlay">
+								<div class="popup">
+									<h2>Thank you</h2>
+									<a class="close" href="#">&times;</a>
+									<div class="content">
+										Email sent successfully. We will reply ASAP.
+									</div>
+								</div>
+						</div>
             <div class="status"></div>
         </div>
         <!--Grid column-->

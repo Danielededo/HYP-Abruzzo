@@ -72,3 +72,16 @@ function swapEvent(el){
     x.style.display="block";
     el.style.textDecoration = "underline";
   }
+
+  function wait2(){
+    setTimeout(function(){
+      mailReset();
+    }, 3000);
+  }
+
+  function mailReset(){
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("subject").value = "";
+    document.getElementById("message").value = "";
+  }

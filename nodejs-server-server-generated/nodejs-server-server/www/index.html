@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Our first server is running!</h1>
+    <p>Voluntary abruzzo</p>
+    <ul></ul>
+  </body>
+  <script>
+    var myList = document.querySelector("ul");
+    fetch("v2/people")
+    .then(function(response) {
+      if (!response.ok) {
+        throw new Error("HTTP error, status = " + response.status);
+      }
+      return response.json();
+    })
+    .then(function(json) {
+      for (var i = 0; i < json.length; i++) {
+        var listItem = document.createElement("li");
+        var listItem1= document.createElement("img");
+        let { Name , Image } = json[i];
+        listItem.innerHTML = `${Name}`;
+        listItem1.src= `${Image}`;
+        myList.appendChild(listItem);
+        myList.appendChild(listItem1);
+      }
+    });
+</script>
+</html>

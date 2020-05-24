@@ -18,11 +18,10 @@ exports.peopleDbSetup = function(s) {
 /**
  * Get all the person in the database
  * List of person
- *
+ * ' /people
  * returns List
  **/
 exports.peopleGET = function() {
-  console.log("ci arriva?");
   return sqlDb("Person")
   .then(data => {
     return data.map(e => {
@@ -38,12 +37,11 @@ exports.peopleGET = function() {
 /**
  * Get a person by ID
  * Person
- *
+ * ' /people/(Id_person)
  * id_person Integer Person id
  * returns Person
  **/
 exports.peopleId_personGET = function(id_person) {
-  console.log("qui si fa una personGet");
   return sqlDb("Person").where({ Id_person : id_person}).then(data => {
     return data;
   });
@@ -53,12 +51,11 @@ exports.peopleId_personGET = function(id_person) {
 /**
  * Get the people associated to that service
  * Person
- *
+ * ' /people/peopleservice/(Id_service)
  * id_service Integer id of the service associated to that person
  * returns List
  **/
 exports.peoplePeopleserviceId_serviceGET = function(id_service) {
-  console.log("qui si fa una serviceGet");
   return sqlDb("Person").join("Is involved in", "Person.Id_person", "=", "Is involved in.Id_person").where({ Id_service : id_service}).then(data =>{
     return data;
   });
@@ -68,12 +65,11 @@ exports.peoplePeopleserviceId_serviceGET = function(id_service) {
 /**
  * Get the person associated to that event
  * Person
- *
+ * ' /person/(Id_event)
  * id_event Integer id of the event associated to that person
  * returns Person
  **/
 exports.personId_eventGET = function(id_event) {
-  console.log("qui si fa una eventget");
   return sqlDb("Person").join("Contact for", "Person.Id_person", "=", "Contact for.Id_person").where({ Id_event : id_event}).then(data =>{
     return data;
   });

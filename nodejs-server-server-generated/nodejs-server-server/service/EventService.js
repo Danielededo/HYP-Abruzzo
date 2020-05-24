@@ -20,49 +20,46 @@ exports.eventsDbSetup = function(s) {
 /**
  * Get the event relative to that person
  * Event
- *
+ * ' /event/eventPerson/(Id_person)
  * id_person Integer person that is the contact for that event
  * returns Event
  **/
  exports.eventEventPersonId_personGET = function(id_person) {
-  console.log("qui si fa una get dell'evento per cui è contact l' id_person");
-    return sqlDb("Event").join("Contact for", function(){
-      this.on("Event.Id_event", "=" ,"Contact for.Id_event")
-    }).where({ Id_person : id_person}).then(data => {
-      return data;
-    });
+  return sqlDb("Event").join("Contact for", function(){
+    this.on("Event.Id_event", "=" ,"Contact for.Id_event")
+  }).where({ Id_person : id_person}).then(data => {
+    return data;
+  });
 }
 
 
 /**
  * Get the event relative to the service
  * Event
- *
+ * ' /event/eventService/(Id_service)
  * id_service Integer service that the event present
  * returns Event
  **/
 exports.eventEventServiceId_serviceGET = function(id_service) {
-  console.log("qui si fa una get dell'evento associato al servizio id_service");
-    return sqlDb("Event").join("Service", function(){
-      this.on("Event.Id_event", "=" ,"Service.Id_event")
-    }).where({ Id_service : id_service}).then(data => {
-      return data;
-    });
+  return sqlDb("Event").join("Service", function(){
+    this.on("Event.Id_event", "=" ,"Service.Id_event")
+  }).where({ Id_service : id_service}).then(data => {
+    return data;
+  });
 }
 
 
 /**
  * Get an event by ID
  * Event
- *
+ * ' /event/(Id_event)
  * id_event Integer Event id
  * returns Event
  **/
 exports.eventId_eventGET = function(id_event) {
-  console.log("qui si fa una get dell'evento id_event");
-    return sqlDb("Event").where({ Id_event : id_event}).then(data => {
-      return data;
-    });
+  return sqlDb("Event").where({ Id_event : id_event}).then(data => {
+    return data;
+  });
 }
 
 
@@ -71,12 +68,12 @@ exports.eventId_eventGET = function(id_event) {
 /**
  * Gets a list of event by month
  * The event of the specified month
- *
+ * ' /events/(month)
  * month Integer month of this event
  * returns List
  **/
-exports.eventsMonthGET = function(month) {
-  return sqlDb("Event").where('Event.Date', 'like', '_____'+month+'%').then(data => {
+ exports.eventsMonthGET = function(month) {
+  return sqlDb("Event").whereRaw({"EXTRACT(MONTH FROM Event.Date::date) = ?" : month}).then(data => {
         return data;
   });
 }

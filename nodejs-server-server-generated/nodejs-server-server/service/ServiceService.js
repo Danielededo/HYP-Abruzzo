@@ -20,7 +20,7 @@ exports.servicesDbSetup = function(s) {
 /**
  * Get a list of services
  * List of services
- *
+ * ' /services
  * returns List
  **/
 exports.servicesGET = function() {
@@ -34,7 +34,7 @@ exports.servicesGET = function() {
 /**
  * Get a service by ID
  * Service
- *
+ * ' /services/(Id_service)
  * id_service Integer Service id
  * returns Service
  **/
@@ -48,7 +48,7 @@ exports.servicesId_serviceGET = function(id_service) {
 /**
  * Get a list of service relative to an event
  * List of services
- *
+ * ' /services/servicesEvent/(Id_event)
  * id_event Integer Event id
  * returns List
  **/
@@ -62,7 +62,7 @@ exports.servicesServicesEventId_eventGET = function(id_event) {
 /**
  * Get a list of service relative to a person
  * List of services
- *
+ * ' /services/servicesPerson/(Id_person)
  * id_person Integer Event id
  * returns List
  **/

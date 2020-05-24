@@ -1,5 +1,20 @@
 'use strict';
+let sqlDb;
 
+
+
+exports.servicesDbSetup = function(s) {
+  sqlDb = s;
+  console.log("Controllo se ci sta la tabella");
+  return sqlDb.schema.hasTable("Service").then(exists => {
+    console.log("ciao");
+    if (!exists) {
+      console.log("It doesn't so we create it");
+    } else {
+      console.log("It exists.");
+    }
+  });
+};
 
 /**
  * Get a list of services
@@ -113,4 +128,3 @@ exports.servicesServicesPersonId_personGET = function(id_person) {
     }
   });
 }
-

@@ -1,4 +1,6 @@
 let { peopleDbSetup } = require("./PersonService");
+let { eventsDbSetup } = require("./EventService");
+let { servicesDbSetup } = require("./ServiceService");
 
 const sqlDbFactory = require("knex");
 let sqlDb = sqlDbFactory({
@@ -15,6 +17,8 @@ let sqlDb = sqlDbFactory({
 
 function setupDataLayer() {
   console.log("Setting up Data Layer");
+  eventsDbSetup(sqlDb);
+  servicesDbSetup(sqlDb);
   return peopleDbSetup(sqlDb);
 }
 

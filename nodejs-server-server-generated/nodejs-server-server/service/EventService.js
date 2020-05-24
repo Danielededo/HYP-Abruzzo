@@ -1,4 +1,20 @@
 'use strict';
+let sqlDb;
+
+
+
+exports.eventsDbSetup = function(s) {
+  sqlDb = s;
+  console.log("Controllo se ci sta la tabella");
+  return sqlDb.schema.hasTable("Event").then(exists => {
+    console.log("ciao");
+    if (!exists) {
+      console.log("It doesn't so we create it");
+    } else {
+      console.log("It exists.");
+    }
+  });
+};
 
 
 /**
@@ -8,7 +24,22 @@
  * id_person Integer person that is the contact for that event
  * returns Event
  **/
-exports.eventEventPersonId_personGET = function(id_person) {
+ exports.eventEventPersonId_personGET = function(id_person) {
+  console.log("qui si fa una get dell'evento per cui è contact l' id_person");
+    return sqlDb("Event").join("Contact for", function(){
+      this.on("Event.Id_event", "=" ,"Contact for.Id_event")
+    }).where({ Id_person : id_person}).then(data => {
+      return data;
+    });
+}
+/**
+ * Get the event relative to that person
+ * Event
+ *
+ * id_person Integer person that is the contact for that event
+ * returns Event
+ **/
+/*exports.eventEventPersonId_personGET = function(id_person) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -23,7 +54,7 @@ exports.eventEventPersonId_personGET = function(id_person) {
       resolve();
     }
   });
-}
+}*/
 
 
 /**
@@ -104,4 +135,3 @@ exports.eventsMonthGET = function(month) {
     }
   });
 }
-

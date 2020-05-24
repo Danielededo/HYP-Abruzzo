@@ -16,6 +16,7 @@ exports.servicesDbSetup = function(s) {
   });
 };
 
+
 /**
  * Get a list of services
  * List of services
@@ -23,6 +24,65 @@ exports.servicesDbSetup = function(s) {
  * returns List
  **/
 exports.servicesGET = function() {
+  return sqlDb("Service")
+  .then(data => {
+    return data;
+  });
+}
+
+
+/**
+ * Get a service by ID
+ * Service
+ *
+ * id_service Integer Service id
+ * returns Service
+ **/
+exports.servicesId_serviceGET = function(id_service) {
+  return sqlDb("Service").where({ Id_service : id_service}).then(data => {
+    return data;
+  });
+}
+
+
+/**
+ * Get a list of service relative to an event
+ * List of services
+ *
+ * id_event Integer Event id
+ * returns List
+ **/
+exports.servicesServicesEventId_eventGET = function(id_event) {
+  return sqlDb("Service").where({ Id_event : id_event}).then(data =>{
+    return data;
+  });
+}
+
+
+/**
+ * Get a list of service relative to a person
+ * List of services
+ *
+ * id_person Integer Event id
+ * returns List
+ **/
+exports.servicesServicesPersonId_personGET = function(id_person) {
+  return sqlDb("Service").join("Is involved in", "Service.Id_service", "=", "Is involved in.Id_service").where({ Id_person : id_person}).then(data =>{
+    return data;
+  });
+}
+
+
+
+
+
+/**
+ * Get a list of services
+ * List of services
+ *
+ * returns List
+ **/
+/*exports.servicesGET = function() {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = [ {
@@ -42,7 +102,7 @@ exports.servicesGET = function() {
       resolve();
     }
   });
-}
+}*/
 
 
 /**
@@ -52,7 +112,7 @@ exports.servicesGET = function() {
  * id_service Integer Service id
  * returns Service
  **/
-exports.servicesId_serviceGET = function(id_service) {
+/*exports.servicesId_serviceGET = function(id_service) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -67,7 +127,7 @@ exports.servicesId_serviceGET = function(id_service) {
       resolve();
     }
   });
-}
+}*/
 
 
 /**
@@ -77,7 +137,7 @@ exports.servicesId_serviceGET = function(id_service) {
  * id_event Integer Event id
  * returns List
  **/
-exports.servicesServicesEventId_eventGET = function(id_event) {
+/*exports.servicesServicesEventId_eventGET = function(id_event) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = [ {
@@ -97,7 +157,7 @@ exports.servicesServicesEventId_eventGET = function(id_event) {
       resolve();
     }
   });
-}
+}*/
 
 
 /**
@@ -107,7 +167,7 @@ exports.servicesServicesEventId_eventGET = function(id_event) {
  * id_person Integer Event id
  * returns List
  **/
-exports.servicesServicesPersonId_personGET = function(id_person) {
+/*exports.servicesServicesPersonId_personGET = function(id_person) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = [ {
@@ -127,4 +187,4 @@ exports.servicesServicesPersonId_personGET = function(id_person) {
       resolve();
     }
   });
-}
+}*/

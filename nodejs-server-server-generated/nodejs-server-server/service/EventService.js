@@ -32,6 +32,54 @@ exports.eventsDbSetup = function(s) {
       return data;
     });
 }
+
+
+/**
+ * Get the event relative to the service
+ * Event
+ *
+ * id_service Integer service that the event present
+ * returns Event
+ **/
+exports.eventEventServiceId_serviceGET = function(id_service) {
+  console.log("qui si fa una get dell'evento associato al servizio id_service");
+    return sqlDb("Event").join("Service", function(){
+      this.on("Event.Id_event", "=" ,"Service.Id_event")
+    }).where({ Id_service : id_service}).then(data => {
+      return data;
+    });
+}
+
+
+/**
+ * Get an event by ID
+ * Event
+ *
+ * id_event Integer Event id
+ * returns Event
+ **/
+exports.eventId_eventGET = function(id_event) {
+  console.log("qui si fa una get dell'evento id_event");
+    return sqlDb("Event").where({ Id_event : id_event}).then(data => {
+      return data;
+    });
+}
+
+
+
+
+/**
+ * Gets a list of event by month
+ * The event of the specified month
+ *
+ * month Integer month of this event
+ * returns List
+ **/
+exports.eventsMonthGET = function(month) {
+  return sqlDb("Event").where('Event.Date', 'like', '_____'+month+'%').then(data => {
+        return data;
+  });
+}
 /**
  * Get the event relative to that person
  * Event
@@ -64,7 +112,7 @@ exports.eventsDbSetup = function(s) {
  * id_service Integer service that the event present
  * returns Event
  **/
-exports.eventEventServiceId_serviceGET = function(id_service) {
+/*exports.eventEventServiceId_serviceGET = function(id_service) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -79,7 +127,7 @@ exports.eventEventServiceId_serviceGET = function(id_service) {
       resolve();
     }
   });
-}
+}*/
 
 
 /**
@@ -89,7 +137,7 @@ exports.eventEventServiceId_serviceGET = function(id_service) {
  * id_event Integer Event id
  * returns Event
  **/
-exports.eventId_eventGET = function(id_event) {
+/*exports.eventId_eventGET = function(id_event) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -104,7 +152,7 @@ exports.eventId_eventGET = function(id_event) {
       resolve();
     }
   });
-}
+}*/
 
 
 /**
@@ -114,7 +162,7 @@ exports.eventId_eventGET = function(id_event) {
  * month Integer month of this event
  * returns List
  **/
-exports.eventsMonthGET = function(month) {
+/*exports.eventsMonthGET = function(month) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = [ {
@@ -134,4 +182,4 @@ exports.eventsMonthGET = function(month) {
       resolve();
     }
   });
-}
+}*/

@@ -44,11 +44,40 @@ exports.peopleGET = function() {
  **/
 exports.peopleId_personGET = function(id_person) {
   console.log("qui si fa una personGet");
-    return sqlDb("Person").where({ Id_person : id_person}).then(data => {
-      return data;
-    });
+  return sqlDb("Person").where({ Id_person : id_person}).then(data => {
+    return data;
+  });
 }
 
+
+/**
+ * Get the people associated to that service
+ * Person
+ *
+ * id_service Integer id of the service associated to that person
+ * returns List
+ **/
+exports.peoplePeopleserviceId_serviceGET = function(id_service) {
+  console.log("qui si fa una serviceGet");
+  return sqlDb("Person").join("Is involved in", "Person.Id_person", "=", "Is involved in.Id_person").where({ Id_service : id_service}).then(data =>{
+    return data;
+  });
+}
+
+
+/**
+ * Get the person associated to that event
+ * Person
+ *
+ * id_event Integer id of the event associated to that person
+ * returns Person
+ **/
+exports.personId_eventGET = function(id_event) {
+  console.log("qui si fa una eventget");
+  return sqlDb("Person").join("Contact for", "Person.Id_person", "=", "Contact for.Id_person").where({ Id_event : id_event}).then(data =>{
+    return data;
+  });
+}
 /**
  * Get all the person in the database
  * List of person
@@ -108,7 +137,7 @@ exports.peopleId_personGET = function(id_person) {
  * id_service Integer id of the service associated to that person
  * returns List
  **/
-exports.peoplePeopleserviceId_serviceGET = function(id_service) {
+/*exports.peoplePeopleserviceId_serviceGET = function(id_service) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = [ {
@@ -127,7 +156,7 @@ exports.peoplePeopleserviceId_serviceGET = function(id_service) {
     }
   });
 }
-
+*/
 
 /**
  * Get the person associated to that event
@@ -136,7 +165,7 @@ exports.peoplePeopleserviceId_serviceGET = function(id_service) {
  * id_event Integer id of the event associated to that person
  * returns Person
  **/
-exports.personId_eventGET = function(id_event) {
+/*exports.personId_eventGET = function(id_event) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -150,4 +179,4 @@ exports.personId_eventGET = function(id_event) {
       resolve();
     }
   });
-}
+}*/

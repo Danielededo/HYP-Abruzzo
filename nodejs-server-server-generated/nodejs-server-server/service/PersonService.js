@@ -15,6 +15,12 @@ exports.peopleDbSetup = function(s) {
   });
 };
 
+/**
+ * Get all the person in the database
+ * List of person
+ *
+ * returns List
+ **/
 exports.peopleGET = function() {
   console.log("ci arriva?");
   return sqlDb("Person")
@@ -22,10 +28,26 @@ exports.peopleGET = function() {
     return data.map(e => {
       Id_person: e.Id_person;
       Name: e.Name;
+      Description: e.Description;
+      Image: e.Image;
       return e;
     });
   });
 };
+
+/**
+ * Get a person by ID
+ * Person
+ *
+ * id_person Integer Person id
+ * returns Person
+ **/
+exports.peopleId_personGET = function(id_person) {
+  console.log("qui si fa una personGet");
+    return sqlDb("Person").where({ Id_person : id_person}).then(data => {
+      return data;
+    });
+}
 
 /**
  * Get all the person in the database
@@ -61,7 +83,7 @@ exports.peopleGET = function() {
  * id_person Integer Person id
  * returns Person
  **/
-exports.peopleId_personGET = function(id_person) {
+/*exports.peopleId_personGET = function(id_person) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -76,6 +98,7 @@ exports.peopleId_personGET = function(id_person) {
     }
   });
 }
+*/
 
 
 /**

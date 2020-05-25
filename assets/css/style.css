@@ -8,9 +8,23 @@ body{
 	line-height: 50px;
 	font-size: 20px;
 }
-
+.navbar-nav>.nav-item>.nav-link{
+	color: #ff8e15;
+}
+.navbar-nav>.nav-item>.nav-link:hover, .navbar-nav>.nav-item>.nav-link:focus{
+  color: white;
+}
 .navbar-brand{
 	font-size: 25px;
+}
+.navbar>.navbar-brand{
+	color: #ff8e15;
+}
+.navbar>.active{
+	color: white;
+}
+.navbar>.navbar-brand:hover, .navbar>.navbar-brand:focus{
+	color: white;
 }
 
 .navbar-left >img{
@@ -149,10 +163,14 @@ body{
 
 .breadcrumb{
 	margin-top: -6px;
+	background-color: #D3D3D3;
 }
 
 .breadcrumb-item{
 	font-size: 18px;
+}
+.breadcrumb>.breadcrumb-item{
+	color: black;
 }
 
 /*link in black

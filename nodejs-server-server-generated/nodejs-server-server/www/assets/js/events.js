@@ -39,10 +39,17 @@ function eventpage(x,y){
           listItem9.width = 562;
           listItem9.height = 375;
           listItem4.appendChild(listItem9);
+          listItem5.href = "../pages/event.html";
+          var z = "setEvent("+`${Id_event}`+")";
+          listItem5.setAttribute('onclick',z);
           if (j==0) {
             var listItem10 = document.createElement("br");
             myList.appendChild(listItem10);}
         }
       }
     });
+}
+
+function setEvent(x){
+  localStorage.setItem("Id_event",x);
 }

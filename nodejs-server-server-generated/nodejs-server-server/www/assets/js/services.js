@@ -20,7 +20,8 @@ function servicepage(){
         let { Name  , Image , Id_service} = json[x];
         var listItem1 = document.createElement("a");
         listItem1.href = "../pages/service.html";
-        //listItem1.setAttribute('onclick','getperson(2)');
+        var z = "setService("+`${Id_service}`+")";
+        listItem1.setAttribute('onclick',z);
         var listItem2 = document.createElement("img");
         var listItem3 = document.createElement("br");
         var listItem4 = document.createElement("a");
@@ -36,4 +37,8 @@ function servicepage(){
       myList.appendChild(listItem5);
     }
   });
+}
+
+function setService(x){
+  localStorage.setItem("Id_service",x);
 }

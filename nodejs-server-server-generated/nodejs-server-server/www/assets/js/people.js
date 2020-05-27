@@ -20,8 +20,8 @@ function peoplepage(){
         let { Name  , Image , Id_person} = json[x];
         var listItem1 = document.createElement("a");
         listItem1.href = "../pages/person.html";
-        var z = ""+`${Id_person}`+"";
-        listItem1.setAttribute('onclick','getperson(2)');
+        var z = "setPerson("+`${Id_person}`+")";
+        listItem1.setAttribute('onclick',z);
         var listItem2 = document.createElement("img");
         var listItem3 = document.createElement("br");
         var listItem4 = document.createElement("a");
@@ -40,19 +40,6 @@ function peoplepage(){
   });
 }
 
-function getperson(x){
-  fetch("../v2/people/" + x)
-  .then(function(response) {
-    if (!response.ok) {
-      throw new Error("HTTP error, status = " + response.status);
-    }
-    return response.json();
-  })
-  .then(function(json) {
-    var item0 = document.getElementById("NamePerson");
-    var item1 = document.createElement("b");
-    let { Name } = json[0];
-    item1.textContent = `${Name}`;
-    item0.appendChild(item1);
-  });
+function setPerson(x){
+  localStorage.setItem("Id_person",x);
 }

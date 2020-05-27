@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Events</title>
+	<link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon.ico" />
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../assets/css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="../assets/js/bootstrap.min.js"></script>
+	<script src="../assets/js/scripts.js"></script>
+	<script src="../assets/js/events.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+	  <a href="../index.html" class="navbar-left">
+	  	<img src="../assets/images/logo.jpg">
+	  </a>
+	  <a class="navbar-brand" href="../index.html">
+	  	Voluntary Abruzzo
+	  </a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item">
+	        <a class="nav-link" href="../pages/services.html">Services</a>
+	      </li>
+	      <li class="nav-item active">
+	        <a class="nav-link" href="../pages/events.html">Events</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="../pages/people.html">People</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="../pages/association.html">Association</a>
+	      </li>
+	    </ul>
+	  </div>
+	</nav>
+	<br>
+	<nav aria-label="breadcrumb">
+	  <ol class="breadcrumb">
+			<li class="breadcrumb-item"><a id="bread" href="../pages/events.html">Events</a></li>
+			<li id="crumb" class="breadcrumb-item active" aria-current="page">Events</li>
+			<li id="monthClick" class="breadcrumb-item"></li>
+	  </ol>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md">
+				<h2><b>Events</b></h2>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-md-2">
+					<a class="month" href="#" onclick="myFunction(this,'Jan')"><h3>January</h3></a><br>
+					<a class="month" href="#" onclick="myFunction(this,'Feb')"><h3>February</h3></a><br>
+					<a class="month" href="#" onclick="myFunction(this,'Mar')"><h3>March</h3></a><br>
+					<a class="month" href="#" onclick="myFunction(this,'Apr')"><h3>April</h3></a><br>
+					<a class="month" href="#" onclick="myFunction(this,'May')"><h3>May</h3></a><br>
+					<a class="month" href="#" onclick="myFunction(this,'Jun')"><h3>June</h3></a><br>
+					<a class="month" href="#" onclick="myFunction(this,'Jul')"><h3>July</h3></a><br>
+					<a class="month" href="#" onclick="myFunction(this,'Aug')"><h3>August</h3></a><br>
+					<a class="month" href="#" onclick="myFunction(this,'Sep')"><h3>September</h3></a><br>
+					<a class="month" href="#" onclick="myFunction(this,'Oct')"><h3>October</h3></a><br>
+					<a class="month" href="#" onclick="myFunction(this,'Nov')"><h3>November</h3></a><br>
+					<a class="month" href="#" onclick="myFunction(this,'Dec')"><h3>December</h3></a><br>
+			</div>
+			<div class="col-md-1">
+				<div class= "vertical"></div>
+			</div>
+			<div id="Jan">
+				<script> eventpage("Jan", 1); </script>
+			</div>
+			<div id="Feb">
+				<script> eventpage("Feb", 2); </script>
+			</div>
+			<div id="Mar">
+				<script> eventpage("Mar", 3); </script>
+			</div>
+			<div id="Apr">
+				<script> eventpage("Apr", 4); </script>
+			</div>
+			<div id="May">
+				<script> eventpage("May", 5); </script>
+			</div>
+			<div id="Jun">
+				<script> eventpage("Jun", 6); </script>
+			</div>
+			<div id="Jul">
+				<script> eventpage("Jul", 7); </script>
+			</div>
+			<div id="Aug">
+				<script> eventpage("Aug", 8); </script>
+			</div>
+			<div id="Sep">
+				<script> eventpage("Sep", 9); </script>
+			</div>
+			<div id="Oct">
+				<script> eventpage("Oct", 10); </script>
+			</div>
+			<div id="Nov">
+				<script> eventpage("Nov", 11); </script>
+			</div>
+			<div id="Dec">
+				<script> eventpage("Dec", 12); </script>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class='myFooter' >
+		<main>
+				<section>
+						<div>
+						</div>
+				</section>
+				<section>
+						<div>
+							<h3>Contacts</h3>
+							<ul>
+									<li><i aria-hidden="true" class="fas fa-map-marker-alt"></i>&nbspPiazza Leonardo Da Vinci,
+											32,<br>
+											<span>20133 Milano, Italy.</span></li>
+									<li><i aria-hidden="true" class="fas fa-envelope"></i><a
+													href="mailto:info@voluntaryabruzzo.com">&nbspinfo@voluntaryabruzzo.com</a></li>
+									<li><i class="fas fa-phone"></i>&nbsp+02 000000</li>
+							</ul>
+						</div>
+				</section>
+				<section>
+						<div>
+								<h3>Social</h3>
+								<ul>
+										<li><i class="fab fa-facebook-f"></i><a href="index.html#">&nbspFacebook</a></li>
+										<li><i class="fab fa-instagram"></i><a href="index.html#">&nbspInstagram</a></li>
+										<li><i class="fab fa-youtube"></i><a href="index.html#">&nbspYoutube</a></li>
+										<li><i class="fab fa-twitter"></i><a href="index.html#">&nbspTwitter</a></li>
+								</ul>
+						</div>
+				</section>
+				<section>
+						<div>
+						</div>
+				</section>
+		</main>
+		<footer>© 2020 Voluntary Abruzzo. All rights reserved | Design by De Dominicis, Di Odoardo.</footer>
+	</div>
+
+</body>
+</html>

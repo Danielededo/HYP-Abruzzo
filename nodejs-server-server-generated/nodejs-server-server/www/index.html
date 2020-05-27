@@ -1,33 +1,179 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>Our first server is running!</h1>
-    <p>Voluntary abruzzo</p>
-    <ul></ul>
-  </body>
-  <script>
-    var myList = document.querySelector("ul");
-    fetch("v2/people")
-    .then(function(response) {
-      if (!response.ok) {
-        throw new Error("HTTP error, status = " + response.status);
-      }
-      return response.json();
-    })
-    .then(function(json) {
-      for (var i = 0; i < json.length; i++) {
-        var listItem = document.createElement("li");
-        var listItem1= document.createElement("img");
-        let { Name , Image } = json[i];
-        listItem.innerHTML = `${Name}`;
-        listItem1.src= `${Image}`;
-        myList.appendChild(listItem);
-        myList.appendChild(listItem1);
-      }
-    });
-</script>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Voluntary Abruzzo</title>
+	<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/scripts.js"></script>
+	<script src="assets/js/index.js"></script>
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+	  <a href="#" class="navbar-left">
+	  	<img src="assets/images/logo.jpg">
+	  </a>
+	  <a class="navbar-brand active" href="index.html">
+	  	Voluntary Abruzzo
+	  </a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item">
+	        <a class="nav-link" href="pages/services.html">Services</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="pages/events.html">Events</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="pages/people.html">People</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="pages/association.html">Association</a>
+	      </li>
+	    </ul>
+	  </div>
+	</nav>
+
+	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+	  <ol class="carousel-indicators">
+	    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+	    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+	    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+	  </ol>
+	  <div class="carousel-inner">
+	    <div class="carousel-item active" style="background-image: url(https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);">
+	      <img class="d-block w-100" alt="">
+	      <div class="carousel-caption">
+	      	<h2>"Those who in the journey of life have even lit only a torch in the dark hour of someone has not lived in vain"</h2>
+	      </div>
+	    </div>
+	    <div class="carousel-item" style="background-image: url(https://images.unsplash.com/photo-1527525443983-6e60c75fff46?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=632&q=80);">
+	      <img class="d-block w-100" alt="">
+	    </div>
+	    <div class="carousel-item" style="background-image: url(https://i2.wp.com/shineoutnow.com/wp-content/uploads/2019/08/dakota-corbin-xh4mG4cqHGg-unsplash.jpg?fit=3173%2C4338&ssl=1);">
+	      <img class="d-block w-100" alt="">
+	    </div>
+	  </div>
+		  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+		    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		    <span class="sr-only">Previous</span>
+		  </a>
+		  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+		    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		    <span class="sr-only">Next</span>
+		  </a>
+	</div>
+
+	<br>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<h2> <b>Who we are</b> </h2>
+				<img width="75%" height="85%"src="https://images.unsplash.com/photo-1566938089736-5f932b084e1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80">
+			</div>
+			<div id="who_we_are" class="col-md-8">
+				<br><br>
+				<p>The Voluntary Abruzzo is a nonprofit association dedicated to promoting awareness and access to quality volunteer throughout the Abruzzo region.
+					What the association aims to do is organize events that can gather the largest number of willing people and able to contribute to the spread of this lifestyle, so helping others.<br>
+					Not only events, but also services to make the whole community participate and reach out to the most needy people and the environment.
+					In fact we organize also activities in order to make people more aware and responsible on these topics.
+					<a href="pages/association.html">View More</a>
+				</p>
+			</div>
+	</div>
+	<hr>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<h2> <b>Videos</b> </h2>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="video-container">
+					<iframe width="560px" height="315px" src="https://www.youtube.com/embed/pb7_YJp9bVA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="video-container">
+					<iframe width="560px" height="315px" src="https://www.youtube.com/embed/-kOdaFQtX1s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+		<hr>
+		</div>
+
+		<div class="container">
+  <div class="row">
+    <div class="col-md">
+      <h2><b>People</b></h2>
+    </div>
+  </div>
+  <br>
+  <div class="row" id="peoplehome">
+		<script>homepeople();</script>
+  </div>
+  <div class="row">
+    <div class="col-md-10">
+
+    </div>
+    <div class="col-md-2">
+        <a href="pages/people.html"><br /><h5>View More</h5></a>
+    </div>
+  </div>
+</div>
+
+	<div class='myFooter' >
+		<main>
+				<section>
+						<div>
+						</div>
+				</section>
+				<section>
+						<div>
+							<h3>Contacts</h3>
+							<ul>
+									<li><i aria-hidden="true" class="fas fa-map-marker-alt"></i>&nbspPiazza Leonardo Da Vinci,
+											32,<br>
+											<span>20133 Milano, Italy.</span></li>
+									<li><i aria-hidden="true" class="fas fa-envelope"></i><a
+													href="mailto:info@voluntaryabruzzo.com">&nbspinfo@voluntaryabruzzo.com</a></li>
+									<li><i class="fas fa-phone"></i>&nbsp+02 000000</li>
+							</ul>
+						</div>
+				</section>
+				<section>
+						<div>
+								<h3>Social</h3>
+								<ul>
+										<li><i class="fab fa-facebook-f"></i><a href="index.html#">&nbspFacebook</a></li>
+										<li><i class="fab fa-instagram"></i><a href="index.html#">&nbspInstagram</a></li>
+										<li><i class="fab fa-youtube"></i><a href="index.html#">&nbspYoutube</a></li>
+										<li><i class="fab fa-twitter"></i><a href="index.html#">&nbspTwitter</a></li>
+								</ul>
+						</div>
+				</section>
+				<section>
+						<div>
+						</div>
+				</section>
+		</main>
+		<footer>© 2020 Voluntary Abruzzo. All rights reserved | Design by De Dominicis, Di Odoardo.</footer>
+	</div>
+</body>
 </html>

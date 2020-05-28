@@ -46,7 +46,7 @@ exports.eventsDbSetup = function(s) {
 exports.eventEventServiceId_serviceGET = function(id_service) {
   return sqlDb("Event").join("Service", function(){
     this.on("Event.Id_event", "=" ,"Service.Id_event")
-  }).where({ Id_service : id_service}).then(data => {
+  }).select("Event.Name","Event.Id_event").where({ Id_service : id_service}).then(data => {
     return data;
   });
 }

@@ -7,7 +7,7 @@ function getservice(){
     return response.json();
   })
   .then(function(json) {
-    let { Name , Presentation , Image , Photos , Id_event} = json[0];
+    let { Name , Presentation , Image , Photos , Id_service} = json[0];
     document.title = `${Name}`;
     var li = document.getElementById("pathName");
     li.innerHTML = `${Name}`;
@@ -20,5 +20,33 @@ function getservice(){
     var item3 = document.createElement("p");
     item3.innerHTML = `${Presentation}`;
     item2.appendChild(item3);
+    fetch("../v2/event/eventService/" + `${Id_service}`)
+    .then(function(response) {
+      if (!response.ok) {
+        throw new Error("HTTP error, status = " + response.status);
+      }
+      return response.json();
+    })
+    .then(function(even) {
+      var presents = document.getElementById("presents");
+      if(even.length == 0){
+        presents.textContent = "No event has the service in.";
+      }else{
+        var a = document.createElement("a");
+        presents.innerHTML = "This service is presented in the ";
+        presents.appendChild(a);
+        let { Name , Id_event} = even[0];
+        a.href = "../pages/event.html";
+        a.textContent = `${Name}`;
+        var z = "setEvent("+`${Id_event}`+")";
+        a.setAttribute("onclick",z);
+        var here = document.createTextNode(" event.");
+        presents.appendChild(here);
+      }
+    });
   });
+}
+
+function setEvent(x){
+  localStorage.setItem("Id_event",x);
 }

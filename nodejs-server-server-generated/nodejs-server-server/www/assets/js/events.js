@@ -40,7 +40,7 @@ function eventpage(x,y){
           listItem9.height = 375;
           listItem4.appendChild(listItem9);
           listItem5.href = "../pages/event.html";
-          var z = "setEvent("+`${Id_event}`+")";
+          var z = "setEvent("+`${Id_event}`+","+ x +")";
           listItem5.setAttribute('onclick',z);
           if (j==0) {
             var listItem10 = document.createElement("br");
@@ -50,6 +50,7 @@ function eventpage(x,y){
     });
 }
 
-function setEvent(x){
+function setEvent(x,y){
   localStorage.setItem("Id_event",x);
+  localStorage.setItem("month",y.id);
 }

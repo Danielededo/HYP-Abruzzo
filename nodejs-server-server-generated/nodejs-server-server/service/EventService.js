@@ -80,7 +80,7 @@ exports.eventId_eventGET = function(id_event) {
  * returns List
  **/
  exports.eventsMonthGET = function(month) {
-  return sqlDb("Event").andWhereRaw("EXTRACT(month FROM \"Date\") = " + month).then(data => {
+  return sqlDb("Event").andWhereRaw("EXTRACT(month FROM \"Date\") = " + month).orderBy('Date').then(data => {
         return data;
   });
 }

@@ -9,6 +9,7 @@ function getevent(){
     .then(function(json) {
     let { Name , Presentation , Image , Date , Id_event , Location} = json[0];
     document.title = `${Name}`;
+    document.getElementById("monthpath").innerHTML = localStorage.getItem("month");
     var li = document.getElementById("eventpath");
     li.innerHTML = `${Name}`;
     var item0 = document.getElementById("NameEvent");

@@ -206,7 +206,7 @@ body{
 .vertical-s{
 	border-color: inherit;
 	border-left: 0.5px solid;
-  height: 350px;
+  height: 580px;
 }
 @media (max-width: 992px)
 {

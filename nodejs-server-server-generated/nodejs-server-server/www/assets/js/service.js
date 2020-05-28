@@ -1,7 +1,7 @@
 function getservice(){
   fetch("../v2/services/" + localStorage.getItem("Id_service"))
   .then(function(response) {
-    if (!response.ok) {
+      if (!response.ok) {
       throw new Error("HTTP error, status = " + response.status);
     }
     return response.json();
@@ -20,6 +20,10 @@ function getservice(){
     var item3 = document.createElement("p");
     item3.innerHTML = `${Presentation}`;
     item2.appendChild(item3);
+    document.getElementById("first").src = json[0].Photos[0];
+    document.getElementById("second").src = json[0].Photos[1];
+    document.getElementById("third").src = json[0].Photos[2];
+    document.getElementById("fourth").src = json[0].Photos[3];
     fetch("../v2/event/eventService/" + `${Id_service}`)
     .then(function(response) {
       if (!response.ok) {
@@ -44,6 +48,7 @@ function getservice(){
         presents.appendChild(here);
       }
     });
+    localStorage.setItem("name",`${Name}`);
   });
 }
 

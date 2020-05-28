@@ -21,20 +21,21 @@ function getperson(){
     item3.textContent = `${Description}`;
     fetch("../v2/event/eventPerson/" + localStorage.getItem("Id_person"))
     .then(function(response) {
-      if (!response.ok) {
+        if (!response.ok) {
         throw new Error("HTTP error, status = " + response.status);
-      }
+    }
       return response.json();
     })
     .then(function(even) {
       var contact = document.getElementById("contactEvent");
       if(even.length == 0){
-        contact.textContent = "No event managed.";
+         contact.textContent = "No event managed.";
       }else{
-        let { Name , Id_event} = even[0];
+        let { Name , Id_event , Date} = even[0];
         contact.href = "../pages/event.html";
         contact.textContent = `${Name}`;
-        var z = "setEvent("+`${Id_event}`+")";
+        var x = `${Date}`.substring(5,7);
+        var z = "setEvent("+`${Id_event}`+","+x+")";
         contact.setAttribute("onclick",z);
       }
     });
@@ -62,8 +63,9 @@ function getperson(){
   });
 }
 
-function setEvent(x){
+function setEvent(x,y){
   localStorage.setItem("Id_event",x);
+  localStorage.setItem("month",y);
 }
 
 function setService(x){

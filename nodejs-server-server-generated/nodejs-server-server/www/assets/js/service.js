@@ -39,10 +39,11 @@ function getservice(){
         var a = document.createElement("a");
         presents.innerHTML = "This service is presented in the ";
         presents.appendChild(a);
-        let { Name , Id_event} = even[0];
+        let { Name , Id_event , Date} = even[0];
         a.href = "../pages/event.html";
         a.textContent = `${Name}`;
-        var z = "setEvent("+`${Id_event}`+")";
+        var x = `${Date}`.substring(5,7);
+        var z = "setEvent("+`${Id_event}`+","+x+")";
         a.setAttribute("onclick",z);
         var here = document.createTextNode(" event.");
         presents.appendChild(here);
@@ -52,6 +53,7 @@ function getservice(){
   });
 }
 
-function setEvent(x){
+function setEvent(x,y){
   localStorage.setItem("Id_event",x);
+  localStorage.setItem("month",y);
 }

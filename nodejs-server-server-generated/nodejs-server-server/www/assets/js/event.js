@@ -1,3 +1,5 @@
+var months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
 function getevent(){
   fetch("../v2/event/" + localStorage.getItem("Id_event"))
   .then(function(response) {
@@ -9,7 +11,7 @@ function getevent(){
     .then(function(json) {
     let { Name , Presentation , Image , Date , Id_event , Location} = json[0];
     document.title = `${Name}`;
-    document.getElementById("monthpath").innerHTML = localStorage.getItem("month");
+    document.getElementById("monthpath").innerHTML = extract(localStorage.getItem("month"));
     var li = document.getElementById("eventpath");
     li.innerHTML = `${Name}`;
     var item0 = document.getElementById("NameEvent");
@@ -75,4 +77,47 @@ function setPerson(x) {
 
 function setService(x){
   localStorage.setItem("Id_service",x);
+}
+
+function extract(x){
+  var text;
+  switch (x) {
+    case "1":
+      text= "January";
+      break;
+    case "2":
+      text="February";
+      break;
+    case "3":
+      text="March";
+      break;
+    case "4":
+      text="April";
+      break;
+    case "5":
+      text="May";
+      break;
+    case "6":
+      text="June";
+      break;
+    case "7":
+      text="July";
+      break;
+    case "8":
+      text="August";
+      break;
+    case "9":
+      text="September"
+      break;
+    case "10":
+      text="October"
+      break;
+    case "11":
+      text="November"
+      break;
+    case "12":
+      text="December"
+      break;
+  }
+  return text;
 }

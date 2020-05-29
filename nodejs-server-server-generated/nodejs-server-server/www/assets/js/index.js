@@ -8,6 +8,7 @@ function homepeople(){
     return response.json();
   })
   .then(function(json) {
+    localStorage.clear();
     for (var i = 0; i < 4; i++) {
       var listItem0 = document.createElement("div");
       listItem0.classList.add("col-md-3");

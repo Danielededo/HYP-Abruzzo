@@ -23,7 +23,7 @@ exports.peopleDbSetup = function(s) {
  * returns List
  **/
 exports.peopleGET = function() {
-  return sqlDb("Person")
+  return sqlDb("Person").orderBy('Id_person')
   .then(data => {
     return data.map(e => {
       Id_person: e.Id_person;
@@ -61,7 +61,7 @@ exports.peopleId_personGET = function(id_person) {
  * returns List
  **/
 exports.peoplePeopleserviceId_serviceGET = function(id_service) {
-  return sqlDb("Person").join("Is involved in", "Person.Id_person", "=", "Is involved in.Id_person").where({ Id_service : id_service}).then(data =>{
+  return sqlDb("Person").join("Is involved in", "Person.Id_person", "=", "Is involved in.Id_person").where({ Id_service : id_service}).orderBy('Person.Id_person').then(data =>{
     return data;
   });
 }

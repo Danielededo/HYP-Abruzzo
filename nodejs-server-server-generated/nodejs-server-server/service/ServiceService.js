@@ -25,7 +25,7 @@ exports.servicesDbSetup = function(s) {
  * returns List
  **/
 exports.servicesGET = function() {
-  return sqlDb("Service")
+  return sqlDb("Service").orderBy('Id_service')
   .then(data => {
     return data;
   });
@@ -58,7 +58,7 @@ exports.servicesId_serviceGET = function(id_service) {
  * returns List
  **/
 exports.servicesServicesEventId_eventGET = function(id_event) {
-  return sqlDb("Service").where({ Id_event : id_event}).then(data =>{
+  return sqlDb("Service").where({ Id_event : id_event}).orderBy('Id_service').then(data =>{
     return data;
   });
 }
@@ -74,7 +74,7 @@ exports.servicesServicesEventId_eventGET = function(id_event) {
  * returns List
  **/
 exports.servicesServicesPersonId_personGET = function(id_person) {
-  return sqlDb("Service").join("Is involved in", "Service.Id_service", "=", "Is involved in.Id_service").where({ Id_person : id_person}).then(data =>{
+  return sqlDb("Service").join("Is involved in", "Service.Id_service", "=", "Is involved in.Id_service").where({ Id_person : id_person}).orderBy('Service.Id_service').then(data =>{
     return data;
   });
 }

@@ -33,7 +33,7 @@ function peoplepage(){
         listItem1.appendChild( listItem3 );
         listItem1.appendChild( listItem4 );
         x++;
-        if(x==14){j=4;}
+        if(x==15){j=4;}
       }
       myList.appendChild(listItem5);
     }

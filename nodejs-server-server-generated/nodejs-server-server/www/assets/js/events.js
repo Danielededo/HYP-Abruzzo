@@ -55,3 +55,20 @@ function setEvent(x,y){
   localStorage.setItem("Id_event",x);
   localStorage.setItem("month",y);
 }
+
+function breadcrumbmonth() {
+  if (localStorage.getItem("tempvar")!=null) {
+    var z = localStorage.getItem("tempvar");
+    var x = document.getElementById(z);
+    var y = document.getElementsByClassName("month");
+    x.style.display='block';
+    var t = localStorage.getItem("tempvar")+"1";
+    document.getElementById(t).style.textDecoration = "underline";
+    document.getElementById("monthClick").textContent=document.getElementById(t).textContent;
+    document.getElementById("monthClick").style.display='block';
+    document.getElementById("bread").style.display='block';
+    document.getElementById("crumb").style.display='none';
+    console.log(document.getElementById(t).textContent);
+    localStorage.removeItem("tempvar");
+  }
+}

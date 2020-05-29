@@ -12,6 +12,8 @@ function getevent(){
     let { Name , Presentation , Image , Date , Id_event , Location} = json[0];
     document.title = `${Name}`;
     document.getElementById("monthpath").innerHTML = extract(localStorage.getItem("month"));
+    var p = "breadcrumbAdjust("+localStorage.getItem("month")+")";
+    document.getElementById("monthpath").setAttribute("onclick",p);
     var li = document.getElementById("eventpath");
     li.innerHTML = `${Name}`;
     var item0 = document.getElementById("NameEvent");
@@ -77,6 +79,11 @@ function setPerson(x) {
 
 function setService(x){
   localStorage.setItem("Id_service",x);
+}
+
+function breadcrumbAdjust(x){
+  var y = months[x-1];
+  localStorage.setItem("tempvar",y);
 }
 
 function extract(x){

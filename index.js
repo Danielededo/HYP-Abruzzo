@@ -9,17 +9,17 @@ var swaggerTools = require('swagger-tools');
 var jsyaml = require('js-yaml');
 var serverPort = 8080;
 let serveStatic = require('serve-static');
-let { setupDataLayer } = require("./service/DataLayer");
+let { setupDataLayer } = require("./other/service/DataLayer");
 
 // swaggerRouter configuration
 var options = {
   swaggerUi: path.join(__dirname, '/swagger.json'),
-  controllers: path.join(__dirname, './controllers'),
+  controllers: path.join(__dirname, './other/controllers'),
   useStubs: process.env.NODE_ENV === 'development' // Conditionally turn on stubs (mock mode)
 };
 
 // The Swagger document (require it, build it programmatically, fetch it from a URL, ...)
-var spec = fs.readFileSync(path.join(__dirname,'api/swagger.yaml'), 'utf8');
+var spec = fs.readFileSync(path.join(__dirname,'other/api/swagger.yaml'), 'utf8');
 var swaggerDoc = jsyaml.safeLoad(spec);
 
 // Initialize the Swagger middleware
@@ -37,7 +37,7 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
   // Serve the Swagger documents and Swagger UI
   app.use(middleware.swaggerUi());
 
-  app.use(serveStatic(__dirname + "/www"));
+  app.use(serveStatic(__dirname + "/public"));
 
   setupDataLayer().then(() => {
   // Start the server

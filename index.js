@@ -39,9 +39,7 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
 
   app.use(serveStatic(__dirname + "/public"));
 
-  app.get('/backend/swaggerui', function (req, res) {
-    res.redirect(301, '/docs');
-  });
+
   setupDataLayer().then(() => {
   // Start the server
     http.createServer(app).listen(serverPort, function () {

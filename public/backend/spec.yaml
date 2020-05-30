@@ -1,0 +1,401 @@
+---
+swagger: "2.0"
+info:
+  description: "This is the site of Abruzzo voluntary association"
+  version: "1.0.0"
+  title: "Voluntary Abruzzo"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "mario.diodoardo@mail.polimi.it"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "voluntary-abruzzo.herokuapp.com"
+basePath: "/v2"
+tags:
+- name: "event"
+  description: "An event in our association"
+- name: "service"
+  description: "A service in our association"
+- name: "person"
+  description: "Our staff"
+schemes:
+- "https"
+paths:
+  /events/{month}:
+    get:
+      tags:
+      - "event"
+      summary: "Gets a list of event by month"
+      description: "The event of the specified month"
+      operationId: "eventsMonthGET"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "month"
+        in: "path"
+        description: "month of this event"
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Event"
+        "404":
+          description: "unexpected error"
+      x-swagger-router-controller: "Event"
+  /event/{Id_event}:
+    get:
+      tags:
+      - "event"
+      summary: "Get an event by ID"
+      description: "Event"
+      operationId: "eventId_eventGET"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Id_event"
+        in: "path"
+        description: "Event id"
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/Event"
+        "404":
+          description: "unexpected error"
+      x-swagger-router-controller: "Event"
+  /event/eventService/{Id_service}:
+    get:
+      tags:
+      - "event"
+      summary: "Get the event relative to the service"
+      description: "Event"
+      operationId: "eventEventServiceId_serviceGET"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Id_service"
+        in: "path"
+        description: "service that the event present"
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/Event"
+        "404":
+          description: "unexpected error"
+      x-swagger-router-controller: "Event"
+  /event/eventPerson/{Id_person}:
+    get:
+      tags:
+      - "event"
+      summary: "Get the event relative to that person"
+      description: "Event"
+      operationId: "eventEventPersonId_personGET"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Id_person"
+        in: "path"
+        description: "person that is the contact for that event"
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/Event"
+        "404":
+          description: "unexpected error"
+      x-swagger-router-controller: "Event"
+  /services:
+    get:
+      tags:
+      - "service"
+      summary: "Get a list of services"
+      description: "List of services"
+      operationId: "servicesGET"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Service"
+        "404":
+          description: "unexpected error"
+      x-swagger-router-controller: "Service"
+  /services/{Id_service}:
+    get:
+      tags:
+      - "service"
+      summary: "Get a service by ID"
+      description: "Service"
+      operationId: "servicesId_serviceGET"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Id_service"
+        in: "path"
+        description: "Service id"
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/Service"
+        "404":
+          description: "unexpected error"
+      x-swagger-router-controller: "Service"
+  /services/servicesEvent/{Id_event}:
+    get:
+      tags:
+      - "service"
+      summary: "Get a list of service relative to an event"
+      description: "List of services"
+      operationId: "servicesServicesEventId_eventGET"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Id_event"
+        in: "path"
+        description: "Event id"
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Service"
+        "404":
+          description: "unexpected error"
+      x-swagger-router-controller: "Service"
+  /services/servicesPerson/{Id_person}:
+    get:
+      tags:
+      - "service"
+      summary: "Get a list of service relative to a person"
+      description: "List of services"
+      operationId: "servicesServicesPersonId_personGET"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Id_person"
+        in: "path"
+        description: "Event id"
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Service"
+        "404":
+          description: "unexpected error"
+      x-swagger-router-controller: "Service"
+  /people:
+    get:
+      tags:
+      - "person"
+      summary: "Get all the person in the database"
+      description: "List of person"
+      operationId: "peopleGET"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Person"
+        "404":
+          description: "unexpected error"
+      x-swagger-router-controller: "Person"
+  /people/{Id_person}:
+    get:
+      tags:
+      - "person"
+      summary: "Get a person by ID"
+      description: "Person"
+      operationId: "peopleId_personGET"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Id_person"
+        in: "path"
+        description: "Person id"
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/Person"
+        "404":
+          description: "unexpected error"
+      x-swagger-router-controller: "Person"
+  /person/{Id_event}:
+    get:
+      tags:
+      - "person"
+      summary: "Get the person associated to that event"
+      description: "Person"
+      operationId: "personId_eventGET"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Id_event"
+        in: "path"
+        description: "id of the event associated to that person"
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/Person"
+        "404":
+          description: "No people associated to that event"
+      x-swagger-router-controller: "Person"
+  /people/peopleservice/{Id_service}:
+    get:
+      tags:
+      - "person"
+      summary: "Get the people associated to that service"
+      description: "Person"
+      operationId: "peoplePeopleserviceId_serviceGET"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Id_service"
+        in: "path"
+        description: "id of the service associated to that person"
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Person"
+        "404":
+          description: "No people associated to that event"
+      x-swagger-router-controller: "Person"
+definitions:
+  Event:
+    type: "object"
+    required:
+    - "Id_event"
+    properties:
+      Id_event:
+        type: "integer"
+        format: "int64"
+      Name:
+        type: "string"
+      Image:
+        type: "string"
+      Presentation:
+        type: "string"
+      Date:
+        type: "string"
+      Location:
+        type: "string"
+      Person:
+        $ref: "#/definitions/Person"
+      Services:
+        type: "array"
+        items:
+          $ref: "#/definitions/Service"
+    title: "Event"
+    description: "an event of our association"
+    example:
+      Id_event: 1
+      Name: "Beach cleaning"
+      Presentation: "Beach cleaning or clean-up is the process of removing solid litter,\
+        \ dense chemicals, and organic debris deposited on a beach or coastline by\
+        \ the tide, local visitors, or tourists."
+      date: "22/10/20"
+  Service:
+    type: "object"
+    required:
+    - "Id_service"
+    properties:
+      Id_service:
+        type: "integer"
+        format: "int64"
+      Name:
+        type: "string"
+      Image:
+        type: "string"
+      Presentation:
+        type: "string"
+      Info:
+        type: "string"
+      Photos:
+        type: "array"
+        items:
+          type: "string"
+      People:
+        type: "array"
+        items:
+          $ref: "#/definitions/Person"
+      Event:
+        $ref: "#/definitions/Event"
+    title: "Service"
+    description: "a service of our association"
+    example:
+      Id_service: 2
+      Name: "Non Plastich Beach"
+      Presentation: "Somewhere a long the line it has started - the pollution of our\
+        \ beaches, coastlines and ocean. We can not look away anymore, if you see\
+        \ plastic floating around in the waves or stuck on the beach. Just collect\
+        \ it - bin it - feel good! We try to spread the concept of the non-usability\
+        \ of plastic on the beach."
+      Info: "list of something"
+  Person:
+    type: "object"
+    required:
+    - "Id_person"
+    properties:
+      Id_person:
+        type: "integer"
+        format: "int64"
+      Name:
+        type: "string"
+      Description:
+        type: "string"
+      Image:
+        type: "string"
+      Services:
+        type: "array"
+        items:
+          $ref: "#/definitions/Service"
+      Event:
+        $ref: "#/definitions/Event"
+    title: "Person"
+    description: "the staff of our association"
+    example:
+      Id_person: 2
+      Name: "Elena Russo"
+      Description: "Elena is one of the youngest member of the association, she is\
+        \ solar, full of life and creative. She is very close to the environmental\
+        \ cause in fact she is the contact of a future event regarding the beach cleaning."

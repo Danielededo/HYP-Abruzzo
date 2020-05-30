@@ -1,0 +1,148 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Documentation of the Backend part.md</title><style></style></head><body id="preview">
+<h1 class="code-line" data-line-start=0 data-line-end=1><a id="Documentation_of_the_Backend_part_0"></a>Documentation of the Backend part</h1>
+<blockquote>
+<p class="has-line-data" data-line-start="2" data-line-end="3">Deliverable D1</p>
+</blockquote>
+<h2 class="code-line" data-line-start=3 data-line-end=4><a id="General_group_information_3"></a>General group information</h2>
+<table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>Member n.</th>
+<th>Role</th>
+<th>First name</th>
+<th>Last Name</th>
+<th>Matricola</th>
+<th>Email address</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>administrator</td>
+<td>Daniele</td>
+<td>De Dominicis</td>
+<td>946103</td>
+<td><a href="/cdn-cgi/l/email-protection#563237383f333a3378323332393b3f383f353f25163b373f3a7826393a3f3b3f783f22"><span class="__cf_email__" data-cfemail="3155505f58545d541f5554555e5c585f58525842715c50585d1f415e5d585c581f5845">[email&#160;protected]</span></a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>member</td>
+<td>Mario</td>
+<td>Di Odoardo</td>
+<td>928188</td>
+<td><a href="/cdn-cgi/l/email-protection#afc2ceddc6c081cbc6c0cbc0ceddcbc0efc2cec6c381dfc0c3c6c2c681c6db"><span class="__cf_email__" data-cfemail="d1bcb0a3b8beffb5b8beb5beb0a3b5be91bcb0b8bdffa1bebdb8bcb8ffb8a5">[email&#160;protected]</span></a></td>
+</tr>
+</tbody>
+</table>
+<h2 class="code-line" data-line-start=10 data-line-end=11><a id="Links_to_other_deliverables_10"></a>Links to other deliverables</h2>
+<ul>
+<li class="has-line-data" data-line-start="11" data-line-end="12">Deliverable D0: the web application is accessible at <a href="https://voluntary-abruzzo.herokuapp.com">this address</a>.</li>
+<li class="has-line-data" data-line-start="12" data-line-end="14">Deliverable D2: the YAML or JSON file containing the specification of the<br>
+app API can be found at <a href="https://voluntary-abruzzo.herokuapp.com/backend/spec.yaml">this address</a>.</li>
+<li class="has-line-data" data-line-start="14" data-line-end="15">Deliverable D3: the SwaggerUI page of the same API is available at <a href="https://voluntary-abruzzo.herokuapp.com/backend/swaggerui">this address</a>.</li>
+<li class="has-line-data" data-line-start="15" data-line-end="16">Deliverable D4: the source code of D0 is available as a zip file at <a href="https://voluntary-abruzzo.herokuapp.com/backend/app.zip">this address</a>.</li>
+<li class="has-line-data" data-line-start="16" data-line-end="20">Deliverable D5: the address of the online source control repository is available<br>
+<a href="https://github.com/Danielededo/HYP-Abruzzo">this address</a>.<br>
+We hereby declare that this is a private repository and, upon request,we will<br>
+give access to the instructors.</li>
+</ul>
+<h2 class="code-line" data-line-start=20 data-line-end=21><a id="Specification_20"></a>Specification</h2>
+<h3 class="code-line" data-line-start=21 data-line-end=22><a id="Web_Architecture_21"></a>Web Architecture</h3>
+<p class="has-line-data" data-line-start="22" data-line-end="25">Describe here, with a diagram, the components of your web application and<br>
+how they interact. Highlight which parts belong to the application layer, data layer<br>
+or presentation layer. How did you ensure that HTML is not rendered server side?</p>
+<p class="has-line-data" data-line-start="26" data-line-end="31"><img src="ADP.PNG?raw=true" alt="Alt text" title="Application-Data-Presentation layer"><br>
+The client makes an http request to the server via API calls, the server<br>
+requests the data from the database and then sends the files in json format.<br>
+Once the client receives the json it uses javascript functions in order<br>
+to render it in the page.</p>
+<h3 class="code-line" data-line-start=31 data-line-end=32><a id="API_31"></a>API</h3>
+<h4 class="code-line" data-line-start=32 data-line-end=33><a id="REST_compliance_32"></a>REST compliance</h4>
+<p class="has-line-data" data-line-start="33" data-line-end="36">Describe here to what extent did you follow REST principles and what are<br>
+the reasons for which you might have decided to diverge. Note, you must not<br>
+describe the whole API here, just the design decisions.</p>
+<p class="has-line-data" data-line-start="37" data-line-end="39">The client and the server can work independently. In fact the server<br>
+takes care of returning all the client’s requests without knowing how it works.</p>
+<h4 class="code-line" data-line-start=39 data-line-end=40><a id="OpenAPI_Resource_models_39"></a>OpenAPI Resource models</h4>
+<p class="has-line-data" data-line-start="40" data-line-end="41">Describe here synthetically, which models you have introduced for resources.</p>
+<pre><code>Event : represents an event organized by our association.
+Service : represents a service organized by our association.
+Person : represents a member of our association.
+</code></pre>
+<h3 class="code-line" data-line-start=45 data-line-end=46><a id="Data_model_45"></a>Data model</h3>
+<p class="has-line-data" data-line-start="46" data-line-end="48">Describe with an ER diagram the model used in the data layer of your<br>
+web application. How these map to the OpenAPI data model?</p>
+<p class="has-line-data" data-line-start="49" data-line-end="52"><img src="ER.png?raw=true" alt="Alt text" title="ER Diagram"><br>
+For each object we have created a table in the database that allowsus<br>
+to make queries.</p>
+<h2 class="code-line" data-line-start=52 data-line-end=53><a id="Implementation_52"></a>Implementation</h2>
+<h3 class="code-line" data-line-start=53 data-line-end=54><a id="Tools_used_53"></a>Tools used</h3>
+<p class="has-line-data" data-line-start="54" data-line-end="56">Describe here which tools, languages and frameworks did you use for the<br>
+backend of the application.</p>
+<p class="has-line-data" data-line-start="57" data-line-end="59">We mainly used languages and frameworks presented in the course, for the<br>
+database we have used postgresql with pgadmin integration.</p>
+<h3 class="code-line" data-line-start=59 data-line-end=60><a id="Discussion_59"></a>Discussion</h3>
+<p class="has-line-data" data-line-start="60" data-line-end="61">Describe here:</p>
+<ul>
+<li class="has-line-data" data-line-start="61" data-line-end="66">
+<p class="has-line-data" data-line-start="61" data-line-end="64">How did you make sure your web application adheres to the provided<br>
+OpenAPI specification? Which method did you use to test all APIs<br>
+endpoints against the expected response?</p>
+<p class="has-line-data" data-line-start="65" data-line-end="66">We have tested manually all the APIs.</p>
+</li>
+<li class="has-line-data" data-line-start="66" data-line-end="72">
+<p class="has-line-data" data-line-start="66" data-line-end="69">Why do you think your web application adheres to common practices to<br>
+partition a REST-based web application (static assets vs.<br>
+application data)</p>
+<p class="has-line-data" data-line-start="70" data-line-end="72">Instead of receiving all the HTML pages already precompiled by the server,<br>
+we receive only json objects through which we can compile the html files.</p>
+</li>
+<li class="has-line-data" data-line-start="72" data-line-end="78">
+<p class="has-line-data" data-line-start="72" data-line-end="75">Describe synthetically why and how did you manage session state,<br>
+what are the state change triggering actions (e.g., POST to login<br>
+etc…).</p>
+<p class="has-line-data" data-line-start="76" data-line-end="78">We have not managed session state since we don’t have state change<br>
+triggering actions.</p>
+</li>
+<li class="has-line-data" data-line-start="78" data-line-end="83">
+<p class="has-line-data" data-line-start="78" data-line-end="80">Which technology did you use (relational or a no-SQL database) for<br>
+managing the data model?</p>
+<p class="has-line-data" data-line-start="81" data-line-end="83">We have used postgres as DBMS and SQL as query language (knex<br>
+as query-builder)</p>
+</li>
+</ul>
+<h2 class="code-line" data-line-start=83 data-line-end=84><a id="Other_information_83"></a>Other information</h2>
+<h3 class="code-line" data-line-start=84 data-line-end=85><a id="Task_assignment_84"></a>Task assignment</h3>
+<p class="has-line-data" data-line-start="85" data-line-end="87">Describe here how development tasks have been subdivided among members<br>
+of the group, e.g.:</p>
+<blockquote>
+<ul>
+<li class="has-line-data" data-line-start="87" data-line-end="88">Daniele worked on front end (70%) and back end (30% of the time)</li>
+<li class="has-line-data" data-line-start="88" data-line-end="89">Mario worked on front end (30%) and back end (70% of the time)</li>
+</ul>
+</blockquote>
+<h3 class="code-line" data-line-start=89 data-line-end=90><a id="Analysis_of_existing_API_89"></a>Analysis of existing API</h3>
+<p class="has-line-data" data-line-start="90" data-line-end="96">Describe here the research of (full or part of) existing APIs that are similar<br>
+in objectives and scope to the one implemented, that have possibly guided<br>
+implementation choices (these should not be necessarily OpenAPI<br>
+implementations). Toy APIs (such as the Swagger’s Pet Store) or the example<br>
+shown during lectures are not a valid response.<br>
+Use TWO or more items of the form:</p>
+<blockquote>
+<p class="has-line-data" data-line-start="96" data-line-end="101">We took partial inspiration from API seen in the course for the part of the<br>
+API that manages the books request because of the similarity to most of our requests.<br>
+Or<br>
+For the part of the API that manages the events of a given month we considered<br>
+the example of swagger’s petstore because of it is a very clear and explanatory example.</p>
+</blockquote>
+<h3 class="code-line" data-line-start=101 data-line-end=102><a id="Learning_outcome_101"></a>Learning outcome</h3>
+<p class="has-line-data" data-line-start="102" data-line-end="105">What was the most important thing all the members have learned while<br>
+developing this part of the project, what questions remained unanswered,<br>
+how you will use what you’ve learned in your everyday life?</p>
+<ul>
+<li class="has-line-data" data-line-start="106" data-line-end="108">Daniele learned to write Javascript, he would have liked to know more about<br>
+Ajax and JQuery. He is interested to face with other frameworks.</li>
+<li class="has-line-data" data-line-start="108" data-line-end="110">Mario learned how to build a database, he appreciate working on it. He learned<br>
+also what is an API and how to use it concretely.</li>
+</ul>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body></html>

@@ -36,7 +36,7 @@ function eventpage(x,y){
           listItem3.appendChild(listItem7);
           listItem3.appendChild(listItem8);
           listItem9.src = `${Image}`;
-          listItem9.alt = "Image of event: " `${Name}`;
+          listItem9.alt = "Image of event: "+`${Name}`;
           listItem9.width = 562;
           listItem9.height = 375;
           listItem4.appendChild(listItem9);

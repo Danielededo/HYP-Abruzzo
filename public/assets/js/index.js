@@ -18,6 +18,7 @@ function homepeople(){
       var listItem3 = document.createElement("br");
       var listItem4 = document.createElement("a");
       listItem2.src= `${Image}`;
+      listItem2.alt = "Image of our member";
       listItem4.textContent = `${Name}`;
       myList.appendChild( listItem0 );
       listItem0.appendChild( listItem1 );

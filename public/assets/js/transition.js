@@ -24,6 +24,7 @@ function getpeopleService() {
       var item2 = document.createElement("img");
       item2.classList.add("card-img-top");
       item2.src = `${Image}`;
+      item2.alt = "Image of "+ `${Name}`;
       var item3 = document.createElement("div");
       item3.classList.add("card-body");
       var item4 = document.createElement("h5");

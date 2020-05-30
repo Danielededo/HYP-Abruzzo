@@ -17,6 +17,7 @@ function getperson(){
     item0.appendChild(item1);
     var item2 = document.getElementById("profile");
     item2.src = `${Image}`;
+    item2.alt= "Image of "+`${Name}`;
     var item3 = document.getElementById("descript");
     item3.textContent = `${Description}`;
     fetch("../v2/event/eventPerson/" + localStorage.getItem("Id_person"))

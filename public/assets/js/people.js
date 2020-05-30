@@ -27,6 +27,7 @@ function peoplepage(){
         var listItem3 = document.createElement("br");
         var listItem4 = document.createElement("a");
         listItem2.src= `${Image}`;
+        listItem2.alt= "Image of "+`${Name}`;
         listItem4.textContent = `${Name}`;
         listItem.appendChild( listItem0 );
         listItem0.appendChild( listItem1 );

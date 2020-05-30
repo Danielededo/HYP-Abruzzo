@@ -16,6 +16,7 @@ function getservice(){
     item1.textContent = `${Name}`;
     item0.appendChild(item1);
     document.getElementById("imgservice").src = `${Image}`;
+    document.getElementById("imgservice").alt = "Image of service: " + `${Name}`;
     var item2 = document.getElementById("presentation");
     var item3 = document.createElement("p");
     item3.innerHTML = `${Presentation}`;

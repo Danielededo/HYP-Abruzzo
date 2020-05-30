@@ -189,6 +189,11 @@ body{
 .col-md-3 > a{
 	font-size: 20px;
 }
+@media (max-width: 630px) {
+	.col-md-4 > img{
+		width: 100%;
+	}
+}
 
 .vertical{
 	border-color: inherit;

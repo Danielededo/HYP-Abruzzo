@@ -45,6 +45,7 @@ function getpeopleService() {
       item1.appendChild(item5);
       item3.appendChild(item4);
       item5.appendChild(item6);
+      item0.appendChild(document.createElement("br"));
     }
   });
 }

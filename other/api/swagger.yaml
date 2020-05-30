@@ -10,7 +10,7 @@ info:
   license:
     name: "Apache 2.0"
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
-host: "abruzzo-hyp.com"
+host: "https://voluntary-abruzzo.herokuapp.com/"
 basePath: "/v2"
 tags:
 - name: "event"
@@ -20,7 +20,7 @@ tags:
 - name: "person"
   description: "Our staff"
 schemes:
-- "http"
+- "https"
 paths:
   /events/{month}:
     get:

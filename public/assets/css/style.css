@@ -383,7 +383,7 @@ a {
  color: #0054AD;
 }
 
-.anchor {
+a.anchor {
  	 display: block;
 	 position: relative;
 	 top: -250px;

@@ -21,6 +21,9 @@ function eventpage(x,y){
           listItem3.classList.add("col-md-2");
           var listItem4 = document.createElement("div");
           listItem4.classList.add("col-md-4");
+          if (j==0) {
+            listItem2.setAttribute('name','Jan');
+          }
           myList.appendChild(listItem2);
           listItem2.appendChild(listItem3);
           listItem2.appendChild(listItem4);

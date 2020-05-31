@@ -17,6 +17,7 @@ function eventpage(x,y){
           let { Name  , Date , Id_event, Image} = json[j];
           var listItem2 = document.createElement("div");
           listItem2.classList.add("row");
+          if (j==0) {listItem2.setAttribute('id', 'anc');}
           var listItem3 = document.createElement("div");
           listItem3.classList.add("col-md-2");
           var listItem4 = document.createElement("div");

@@ -26,9 +26,6 @@ function eventpage(x,y){
           listItem2.appendChild(listItem4);
           var listItem5 = document.createElement("a");
           var listItem6 = document.createElement("h3");
-          if (j==0) {
-            listItem6.setAttribute('name','Jan');
-          }
           var listItem7 = document.createElement("br");
           var listItem8 = document.createElement("p");
           var listItem9 = document.createElement("img");

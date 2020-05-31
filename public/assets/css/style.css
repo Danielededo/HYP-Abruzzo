@@ -383,7 +383,8 @@ a {
  color: #0054AD;
 }
 
-/*.anchor {
-   position: relative;
-   top: -200px;
-}*/
+.anchor {
+	 position: relative;
+	 top: -200px;
+	 visibility: hidden;
+}

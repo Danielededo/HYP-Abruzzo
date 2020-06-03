@@ -37,6 +37,11 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
   // Serve the Swagger documents and Swagger UI
   app.use(middleware.swaggerUi());
 
+  app.use('/backend/swaggerUi', function fooMiddleware(req, res, next) {
+  // req.url starts with "/foo"
+  res.serveStatic(__dirname + "public/backend/spec.yaml")
+  });
+
   app.use(serveStatic(__dirname + "/public"));
 
 

@@ -45,7 +45,7 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
   app.use(serveStatic(__dirname + "/public"));
 
   app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "https://voluntary-abruzzo.herokuapp.com/backend/swagger.json");
+    res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });

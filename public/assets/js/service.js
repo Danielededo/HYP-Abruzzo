@@ -59,3 +59,15 @@ function setEvent(x,y){
   localStorage.setItem("Id_event",x);
   localStorage.setItem("month",y);
 }
+
+function serviceTransition() {
+  if(localStorage.getItem('bool') == 'true'){
+    localStorage.removeItem('bool');
+    var y = document.getElementsByClassName("service");
+    document.getElementById("presentation").style.display="none";
+    y[0].style.textDecoration="none";
+    var x = document.getElementById("serviceInfo");
+    x.style.display="block";
+    document.getElementById("info-service").style.textDecoration = "underline";
+  }
+}

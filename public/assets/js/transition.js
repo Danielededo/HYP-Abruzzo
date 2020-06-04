@@ -1,6 +1,7 @@
 function getpeopleService() {
   var name = localStorage.getItem('name');
   document.getElementById("nameService").innerHTML = name;
+  document.getElementById("nameService").setAttribute('onclick','setVar()');
   document.getElementById("name").insertAdjacentHTML('beforeend',name);
   fetch("../v2/people/peopleservice/" + localStorage.getItem("Id_service"))
   .then(function(response) {
@@ -54,4 +55,8 @@ function getpeopleService() {
 
 function setPerson(x){
   localStorage.setItem("Id_person",x);
+}
+
+function setVar() {
+  localStorage.setItem('bool','true');
 }

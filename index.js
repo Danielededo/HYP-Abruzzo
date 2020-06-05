@@ -37,24 +37,13 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
   // Serve the Swagger documents and Swagger UI
   app.use(middleware.swaggerUi());
 
-  app.use('/backend/swaggerUi', function fooMiddleware(req, res, next) {
-  // req.url starts with "/foo"
-  serveStatic(__dirname + "public/backend/spec.yaml")
-  });
-
   app.use(serveStatic(__dirname + "/public"));
-
-  app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-  });
 
   setupDataLayer().then(() => {
   // Start the server
     http.createServer(app).listen(serverPort, function () {
-      console.log('Your server is listening on port %d (http://localhost:%d)', serverPort, serverPort);
-        console.log('Swagger-ui is available on http://localhost:%d/docs', serverPort);
+      console.log('Your server is listening on port %d (https://voluntary-abruzzo.herokuapp.com:%d)', serverPort, serverPort);
+        console.log('Swagger-ui is available on https://voluntary-abruzzo.herokuapp.com:%d/docs', serverPort);
       });
     });
 });

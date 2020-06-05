@@ -39,9 +39,8 @@
     window.onload = function() {
       // Begin Swagger UI call region
       const ui = SwaggerUIBundle({
-        url: "swagger.json",
+        url: "https://voluntary-abruzzo.herokuapp.com/backend/spec.yaml",
         dom_id: '#swagger-ui',
-        enableCORS: false,
         deepLinking: true,
         presets: [
           SwaggerUIBundle.presets.apis,

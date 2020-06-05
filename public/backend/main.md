@@ -25,10 +25,12 @@ how they interact. Highlight which parts belong to the application layer, data l
 or presentation layer. How did you ensure that HTML is not rendered server side?
 
 ![Alt text](ADP.PNG?raw=true "Application-Data-Presentation layer")
-The client makes an http request to the server via API calls, the server
-requests the data from the database and then sends the files in json format.
+The client makes an http request to the server via Fetch API calls, the server
+retrieves data from the database and then reply with json objects.
 Once the client receives the json it uses javascript functions in order
 to render it in the page.
+We ensure that html isn't rendered server side because we have used the
+client-side approach.
 ### API
 #### REST compliance
 Describe here to what extent did you follow REST principles and what are
@@ -48,7 +50,7 @@ Describe with an ER diagram the model used in the data layer of your
 web application. How these map to the OpenAPI data model?
 
 ![Alt text](ER.png?raw=true "ER Diagram")
-For each object we have created a table in the database that allowsus
+For each object we have created a table in the database that allows us
 to make queries.
 ## Implementation
 ### Tools used
@@ -94,8 +96,8 @@ implementation choices (these should not be necessarily OpenAPI
 implementations). Toy APIs (such as the Swagger's Pet Store) or the example
 shown during lectures are not a valid response.
 Use TWO or more items of the form:
-> We took partial inspiration from API seen in the course for the part of the
-> API that manages the books request because of the similarity to most of our requests.
+> We took partial inspiration from APIs seen in the course, in particular the part 
+that manages the books request because of the similarity to most of our requests.
 Or
 > For the part of the API that manages the events of a given month we considered 
 the example of swagger's petstore because of it is a very clear and explanatory example.

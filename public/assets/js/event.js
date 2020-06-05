@@ -133,7 +133,3 @@ function extract(x){
   }
   return text;
 }
-
-window.addEventListener("hashchange", function () {
-    window.scrollTo(window.scrollX, window.scrollY - 200);
-});

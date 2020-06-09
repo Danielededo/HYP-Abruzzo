@@ -7,10 +7,10 @@ let sqlDb = sqlDbFactory({
   debug: true,
   client: "pg",
   connection: {
-    host : 'ec2-54-247-169-129.eu-west-1.compute.amazonaws.com',
-    user : 'luysuiqcnkcxco',
-    password : '4792177a845880f63d277e6563858ca889d0922c0fa1513a139c1a3e6a94ae66',
-    database : 'dbhjpjm0t9u879'
+    host : 'ec2-54-247-71-245.eu-west-1.compute.amazonaws.com',
+    user : 'dzgknrdvozmlfy',
+    password : '3a53091edfabd16709613ca3447cdaac5e1cb578a7991111a3cbfa97e7f85e96',
+    database : 'd1rdknsu51n087'
   },
   ssl: true
 });

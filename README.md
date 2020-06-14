@@ -1,4 +1,4 @@
-# <img src="public\assets\images\logo.jpg" alt="logo" zoom=50% /> Voluntary Abruzzo
+# <img src="public\assets\images\logo.jpg" alt="logo" width="50%" height="50%" /> Voluntary Abruzzo
 
 ## General information about the team and the web application
 
